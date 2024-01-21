@@ -91,7 +91,7 @@ ACTION EasyUaReadList_CyclicCode:
 				IF (Internal.UA_NodeGetHandleList_0.Done = 1) THEN
 					Internal.StatusID:= 0;
 					Internal.NodeHdls := Internal.UA_NodeGetHandleList_0.NodeHdls;
-					Internal.Step := 3;
+					Internal.Step := 3;    
 				END_IF
 				IF (Internal.UA_NodeGetHandleList_0.Error = 1) THEN
 					Internal.StatusID:= Internal.UA_NodeGetHandleList_0.ErrorID;
@@ -107,7 +107,7 @@ ACTION EasyUaReadList_CyclicCode:
 				IF (Internal.UA_ReadList_0.Done = 1) THEN
 					Internal.StatusID:= 0;
 					TimeStamps := Internal.UA_ReadList_0.TimeStamps;
-					Internal.Step := 4;
+					Internal.Step := 3;     // Hint Modified by SCNT - to stay in ReadList-Mode, Default behaviour was going into Step 4 to release Handles and stop Connection!
 				END_IF
 				IF (Internal.UA_ReadList_0.Error = 1) THEN
 					Internal.StatusID:= Internal.UA_ReadList_0.ErrorID;
